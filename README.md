@@ -7,13 +7,18 @@ A Cat Clicker app written for Udacity JS Design Patterns course
 + JavaScript 
 + HTML
 
-## Design Requirements 
+## Design Requirements v2.0
+
+Updated design requirements:
 
 Visual Design:  
-+ The application should display two cats. Each ca.
-+ The specifics of the layout do not matter, so style it however you'd like.
+The application should display two cats. Each cat includes:
++ the cat's name   
++ a picture of the cat  
++ text showing the number of clicks  
+
 
 Interaction:  
-+ The number of click should increment increment when the cat picture is clicked 
++ The number of click should increment increment when each cat picture is clicked 
 
 
