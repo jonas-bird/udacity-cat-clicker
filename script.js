@@ -1,8 +1,10 @@
 const cats = [
   {name: "Mittens",
-   image: "./cat1.jpg"},
+   image: "./cat1.jpg",
+   clicks: 0,},
   {name: "Snowball",
-   image: "./cat2.jpg"},
+   image: "./cat2.jpg",
+   clicks: 0,},
 ]
 
 
@@ -24,9 +26,20 @@ function displayCat(cat){
   let catPic = document.createElement('img');
   catPic.src = imagePath;
 
+  // add event listener to the cat picture
+  catPic.addEventListener('click', function(){
+    cat['clicks']++;
+    outPutMsg.innerText = `${name} has ${cat['clicks']} clicks`;
+  })
+
+  // create the output
+  let outPutMsg = document.createElement('div');
+  outPutMsg.textContent = `${name} has ${cat['clicks']} clicks`;
+
   // append the elements onto the div that will contain the cat
   catBox.appendChild(catName);
   catBox.appendChild(catPic);
+  catBox.appendChild(outPutMsg);
 
   // return the div to be appended to the outer container
   return catBox;
@@ -36,5 +49,13 @@ const outerContainer = document.getElementById('outerContainer');
 
 
 for (let cat of cats) {
-  outerContainer.appendChild(displayCat(cat));
+  let innerContainer = displayCat(cat);
+  outerContainer.appendChild(innerContainer);
 }
+// const counterDiv = document.getElementById('output-div');
+// let catClicks = 0;
+
+// catImage.addEventListener('click', function(){
+//   catClicks++;
+//   counterDiv.innerText = catClicks;
+// }
